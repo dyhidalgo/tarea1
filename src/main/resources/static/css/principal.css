@@ -12,9 +12,30 @@ Así se realiza para importar fuentes
     /* Este fon family se toma de la página utilizada desde la fuente importada*/
     font-family: 'Montserrat', sans-serif;
 }
-
+/*
+.footer{
+    height: 13vh;
+    width: 100%;
+    background-image: url(../imagenes/pie.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position: relative;
+    float: right;
+}
+.footer h3{
+    align-items: center;
+    color: white;
+}
+.footer h4{
+    align-items: center;
+    color: silver;
+}*/
 .Container{
-    height: 100vh;
+    height: 110vh;
     width: 100%;
     background-image: url(../imagenes/principal.png);
     background-position: center;
@@ -40,7 +61,6 @@ Así se realiza para importar fuentes
 .Navbar{
     height: 15vh;
     width: 100%;
-    
     margin-top: 5px;
     display: flex;/* Habilita mas propiedades de manera flexible*/
     align-items: flex-start;
@@ -66,25 +86,26 @@ nav{
     flex:1;
     /*align-content: last baseline;align-items: center;*/
     padding-left: 10px;
-    
-    
+
+
 }
 
 nav ul li{
     display: inline-block;
     list-style: none;
     margin: 10% 5%;
-   /* margin: 10% 20px;*/
+    /* margin: 10% 20px;*/
 }
 
 nav ul li a{
+    font-weight: bold; /*Hacer Negrita*/
     text-decoration: none;
     color: #232d60;
     margin-top: 25%;
 }
 
 .content h1{
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 100;
     margin-top: 5%;
     margin-bottom: 15px;
@@ -92,8 +113,15 @@ nav ul li a{
 }
 
 .content p{
-    font-size: 20px;
+    font-size: 25px;
     color: green;
+}
+
+.content h2{
+    font-size: 20px;
+    color: black;
+    margin-top: 25px;
+    margin-left: 45%;
 }
 
 .fondo{
@@ -103,4 +131,15 @@ nav ul li a{
     bottom: 50px;
     right: 150px;
     flex:1;
+}
+.contenido_principal{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;   
+}
+
+.contenido_principal img{
+    width: 150px;
+    height: 130px;
+        justify-content: space-around;
 }
