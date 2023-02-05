@@ -99,6 +99,7 @@ nav ul li{
 
 nav ul li a{
     font-weight: bold; /*Hacer Negrita*/
+    font-size: large;
     text-decoration: none;
     color: #232d60;
     margin-top: 25%;
