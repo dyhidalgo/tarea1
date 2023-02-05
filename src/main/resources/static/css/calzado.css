@@ -9,7 +9,7 @@
 }
 
 .container{
-    height: 160vh;
+    height: 150vh;
     width: 100%;
     background-image: url(../imagenes/principal.png);
     background-position: center;
@@ -54,7 +54,7 @@ nav ul li a{
 }
 h2{
     text-align: center;
-    margin: 50px;
+    margin: 40px;
 }
 
 .content contenido2{
@@ -70,27 +70,24 @@ h2{
 }
 
 .content1{
-    padding-top: 30px;
     display: flex;  
     align-content: center;
     justify-content: space-around;
 }
 
 .content1 img{
-    width: 165px;
-    height:225px; 
+    width: 150px;
+    height:180px; 
 }
 
 .content img{
-    width: 165px;
-    height:225px; 
+    width:150px;
+    height:150px; 
 }
-
 
 .producto h3{
     width: 90%;
-    padding: 16px 0 0;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .fondo{
