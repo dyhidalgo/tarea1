@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+*{
+   
+    margin: 0;
+    padding: 0;
+    /* Este fon family se toma de la página utilizada desde la fuente importada*/
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+    height: 150vh;
+    width: 100%;
+    background-image: url(../imagenes/principal.png);
+    background-position: center;
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position: relative;
+
+}
+
+.navbar{
+    height: 15vh;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+}
+
+.logo{
+    width: 140px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+nav{
+    flex:1;
+    padding-left: 60px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold; 
+}
+h2{
+    text-align: center;
+    margin: 40px;
+}
+
+.content contenido2{
+    display: flex;  
+    align-content: center;
+    justify-content: space-around;
+}
+
+.content{
+    display: flex;  
+    align-content: center;
+    justify-content: space-around;
+}
+
+.content1{
+    display: flex;  
+    align-content: center;
+    justify-content: space-around;
+}
+
+.content1 img{
+    width: 150px;
+    height:180px; 
+}
+
+.content img{
+    width:150px;
+    height:150px; 
+}
+
+.producto h3{
+    width: 90%;
+    margin-bottom: 6px;
+}
+
+.fondo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 50px;
+    right: 150px;
+    flex:1;
+}
+
