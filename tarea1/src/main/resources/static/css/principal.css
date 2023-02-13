@@ -1,0 +1,146 @@
+/*
+
+*/
+/* 
+Así se realiza para importar fuentes
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    /* Este fon family se toma de la página utilizada desde la fuente importada*/
+    font-family: 'Montserrat', sans-serif;
+}
+/*
+.footer{
+    height: 13vh;
+    width: 100%;
+    background-image: url(../imagenes/pie.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position: relative;
+    float: right;
+}
+.footer h3{
+    align-items: center;
+    color: white;
+}
+.footer h4{
+    align-items: center;
+    color: silver;
+}*/
+.Container{
+    height: 110vh;
+    width: 100%;
+    background-image: url(../imagenes/principal.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position: relative;
+    float: right;
+
+}
+
+.Navbar2{
+    height: 15vh;
+    width: 100%;
+    margin: auto;
+    display: flex;/* Habilita mas propiedades de manera flexible*/
+    align-items: center;
+
+
+}
+.Navbar{
+    height: 15vh;
+    width: 100%;
+    margin-top: 5px;
+    display: flex;/* Habilita mas propiedades de manera flexible*/
+    align-items: flex-start;
+}
+.logo{
+    width: 140px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+.logo2{
+    width: 40px;
+    margin-top: 50px;
+    cursor: pointer;
+    float: right;
+}
+.logo3{
+    width: 27px;
+    margin-top: 55px;
+    cursor: pointer;
+    float: right;
+}
+nav{
+    flex:1;
+    /*align-content: last baseline;align-items: center;*/
+    padding-left: 10px;
+
+
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10% 5%;
+    /* margin: 10% 20px;*/
+}
+
+nav ul li a{
+    font-weight: bold; /*Hacer Negrita*/
+    font-size: large;
+    text-decoration: none;
+    color: #232d60;
+    margin-top: 25%;
+}
+
+.content h1{
+    font-size: 50px;
+    font-weight: 100;
+    margin-top: 5%;
+    margin-bottom: 15px;
+    color: #232d60;
+}
+
+.content p{
+    font-size: 25px;
+    color: green;
+}
+
+.content h2{
+    font-size: 20px;
+    color: black;
+    margin-top: 25px;
+    margin-left: 45%;
+}
+
+.fondo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 50px;
+    right: 150px;
+    flex:1;
+}
+.contenido_principal{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;   
+}
+
+.contenido_principal img{
+    width: 150px;
+    height: 130px;
+        justify-content: space-around;
+}
