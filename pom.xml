@@ -11,7 +11,7 @@
 	<groupId>com.tarea1</groupId>
 	<artifactId>tarea1</artifactId>
 	<version>1</version>
-	<name>tarea1</name>
+	<name>tienda_virtual</name>
 	<description>Tarea #1 del curso Programación Web</description>
 	<properties>
 		<java.version>17</java.version>
