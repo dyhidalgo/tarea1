@@ -3,11 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package com.tarea1.repository;
+import com.tarea1.entity.Productos;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Diker Hidalgo
  */
-public interface ProductosRepository {
+@Repository
+public interface ProductosRepository extends CrudRepository<Productos, Long>{
     
 }

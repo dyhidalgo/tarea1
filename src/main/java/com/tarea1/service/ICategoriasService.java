@@ -4,10 +4,21 @@
  */
 package com.tarea1.service;
 
+import com.tarea1.entity.Categorias;
+import java.util.List;
+
 /**
  *
  * @author Diker Hidalgo
  */
 public interface ICategoriasService {
-    
+
+    public List<Categorias> getAllCategorias();
+
+
+   /* public void saveCategorias(Categorias categorias);
+
+    public void delete(long id);
+
+    public Categorias getCategoriasById(Long idCategorias);*/
 }

@@ -4,10 +4,13 @@
  */
 package com.tarea1.service;
 
+import com.tarea1.entity.Productos;
+import java.util.List;
+
 /**
  *
  * @author Diker Hidalgo
  */
 public interface IProductosService {
-    
+    public List<Productos> listProductos();
 }
