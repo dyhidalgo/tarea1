@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /**
@@ -18,18 +19,17 @@ import jakarta.persistence.Table;
  */
 
 @Entity
-@Table(name="categorias")
+@Table(name="categoria")
 public class Categorias  implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id_Categoria;
     private String tipo_categoria;
+/*
+    @OneToMany
+    @JoinColumn (name= "id_usuario_producto")
+    private Productos Productos;*/
 
-/*                               PENDIENTE 
-    @ManyToOne
-    @JoinColumn (name= "paises_id")
-    private Pais pais;
-*/
 
     public long getId_Categoria() {
         return id_Categoria;
