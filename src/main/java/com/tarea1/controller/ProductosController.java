@@ -31,6 +31,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 /**
  *
@@ -41,32 +42,59 @@ public class ProductosController {
 
     @Autowired
     private ICategoriasService categoriasService;
+    
+    @Autowired
+    private IProductosService productosService;
     /*@Autowired
     private IComentariosService comentariosService;
     @Autowired
     private IDetalleOrdenService detalleOrdenService;
     @Autowired
     private IOrdenesService ordenesService;*/
-    @Autowired
-    private IProductosService productosService;
+    
    /* @Autowired
     private ITipoService tipoService;
     @Autowired
     private IUsuariosService usuariosService;*/
 
-    @GetMapping("/categoria")
-    public String Index(Model model) {
-        List<Categorias> listaCategorias = categoriasService.getAllCategorias();
-        model.addAttribute("titulo", "Tabla Categorias");
-        model.addAttribute("categorias", listaCategorias);
-        return "categoria";
-    }
-
-    @GetMapping("/categoriaN")
-    public String crearCategoria(Model model) {
+   
+    //salas --> categoria
+    // peliculas --> productos
+    
+    @GetMapping("/productos")
+    public String index(Model model){
         List<Productos> listaProductos = productosService.listProductos();
-        model.addAttribute("categoria", new Categorias());
-        model.addAttribute("productos", listaProductos);
+        model.addAttribute("titulo","Tabla Productos");
+        model.addAttribute("productos",listaProductos);
+        return "productos";
+    }
+    
+    @GetMapping("/productosN")
+    public String crearProductos(Model model){
+        List<Categorias> listaCategorias = categoriasService.getAllCategorias();
+        model.addAttribute("productos",new Productos());
+        model.addAttribute("categorias",listaCategorias);
+        return "crear";
+    }
+    
+    @GetMapping("/delete/{id}")
+    public String eliminarProductos(@PathVariable("id") Long idProducto){
+        productosService.delete(idProducto);
+        return "redirect:/productos";
+    }
+    
+    @PostMapping("/save")
+    public String guardarProductos(@ModelAttribute Productos productos){
+        productosService.saveProductos(productos);
+        return "redirect:/productos";
+    }
+    
+    @GetMapping("/editProductos/{id}")
+    public String editarProductos (@PathVariable("id") Long idProductos, Model model){
+        Productos productos = productosService.getProductosById(idProductos);
+        List<Categorias> listaCategorias = categoriasService.getAllCategorias();
+        model.addAttribute("productos",productos);
+        model.addAttribute("categorias",listaCategorias);
         return "crear";
     }
 }

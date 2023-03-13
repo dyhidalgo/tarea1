@@ -24,8 +24,22 @@ public class ProductosService implements IProductosService {
     public List<Productos> listProductos() {
         return (List<Productos>) productosRepository.findAll();
     }
+
+    @Override
+    public Productos getProductosById(long id) {
+        return productosRepository.findById(id).orElse(null);
+
+    }
+
+    @Override
+    public void saveProductos(Productos productos) {
+        productosRepository.save(productos);
+    }
+    
+    @Override
+    public void delete(long id) {
+        productosRepository.deleteById(id);
+    }
+    
+    
 }
-
-
-
-

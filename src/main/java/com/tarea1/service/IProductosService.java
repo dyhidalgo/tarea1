@@ -12,5 +12,12 @@ import java.util.List;
  * @author Diker Hidalgo
  */
 public interface IProductosService {
+
     public List<Productos> listProductos();
+
+    public Productos getProductosById(long id);
+
+    public void saveProductos(Productos productos);
+
+    public void delete(long id);
 }

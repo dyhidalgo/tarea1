@@ -29,36 +29,14 @@ import org.springframework.stereotype.Service;
  * @author Diker Hidalgo
  */
 @Service
-public class CategoriasService implements ICategoriasService{
-    
+public class CategoriasService implements ICategoriasService {
+
     @Autowired
     private CategoriasRepository categoriasRepository;
-    
+
     @Override
     public List<Categorias> getAllCategorias() {
-        return(List<Categorias>)categoriasRepository.findAll();
-    }
-   /* 
-     @Override
-    public void delete(long id) {
-        categoriasRepository.deleteById(id);
+        return (List<Categorias>) categoriasRepository.findAll();
     }
 
-    @Override
-    public Persona getPersonabyId(long id) {
-       return personaRepository.findById(id).orElse(null);
-    }
-
-    @Override
-    public void savePersona(Persona persona) {
-        personaRepository.save(persona);
-    }
-
-   
-
-    @Override
-    public Persona getPersonaById(Long idPersona) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-*/
 }

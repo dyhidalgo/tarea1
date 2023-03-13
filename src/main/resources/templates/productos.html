@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"> <!--Time space-->
     <head>
-        <title>Conciertos</title>
+        <title>Productos</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -15,20 +15,22 @@
                     <th scope="col">Nombre Producto</th>
                     <th scope="col">Descripcion</th>
                     <th scope="col">Precio</th>
+                    <th scope="col">Categoria</th>
                 </tr>
             </thead>
             <tbody>
-            <th:block th:each="user : ${concierto}"> <!--es como hacer un for each-->
+            <th:block th:each="user : ${productos}"> <!--es como hacer un for each-->
                 <tr>
-                    <td th:text="${user.getId_Producto}"></td>
-                    <td th:text="${user.getNombre_Producto}"></td>
-                    <td th:text="${user.getDescripcion}"></td>
-                    <td th:text="${user.getPrecio}"></td>
+                    <td th:text="${user.getId}"></td>
+                    <td th:text="${user.getNombre_producto}"></td>
+                    <td th:text="${user.getDescripcion_producto}"></td>
+                    <td th:text="${user.getPrecio_producto}"></td>
+                    <td th:text="${user.getCategorias.getNombre_categoria}"></td>
                     <td>                            
-                         <a th:href="@{/delete/{id}(id=${user.getId})}">Eliminar</a>                      
+                        <a th:href="@{/delete/{id}(id=${user.getId})}">Eliminar</a>                      
                     </td>
                     <td>                            
-                                              
+                        <a th:href="@{/editProductos/{id}(id=${user.getId})}">Editar</a> 
                     </td>
                 </tr>
             </th:block>
