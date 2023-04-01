@@ -14,6 +14,7 @@ public class Productos implements Serializable {
     private String nombre_producto;
     private String descripcion_producto;
     private int precio_producto;
+    private String nombre_imagen;
 
     @ManyToOne
     @JoinColumn(name = "id_categoria")
@@ -55,8 +56,17 @@ public class Productos implements Serializable {
         return categorias;
     }
 
+    public String getNombre_imagen() {
+        return nombre_imagen;
+    }
+
+    public void setNombre_imagen(String nombre_imagen) {
+        this.nombre_imagen = nombre_imagen;
+    }
+
+    
+    
     public void setCategorias(Categorias categorias) {
         this.categorias = categorias;
     }
-
 }

@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.tarea1;
+package com.tarea1.controller;
 
+import com.tarea1.*;
 import java.util.Locale;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -43,7 +44,7 @@ public class WebConfig implements  WebMvcConfigurer{
 
     @Override
     public void addViewControllers(ViewControllerRegistry registro) {
-        registro.addViewController("/").setViewName("productos");
+        registro.addViewController("/").setViewName("principal"); //productos
         registro.addViewController("/login");
         registro.addViewController("/errores/403").setViewName("/errores/403");
     }
