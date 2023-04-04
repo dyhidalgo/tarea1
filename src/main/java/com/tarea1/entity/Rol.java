@@ -7,26 +7,24 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import java.io.Serializable;
-import lombok.Data;
 
 @Entity
-@Table(name="rol")
-public class Rol implements Serializable{
-    private static final long serialVersionUID = 1L;
-    
+@Table(name = "rol")
+public class Rol implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idRol;
-    
+    private Long id;
+
     @NotEmpty
     private String nombre;
 
-    public Long getIdRol() {
-        return idRol;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdRol(Long idRol) {
-        this.idRol = idRol;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -34,6 +32,19 @@ public class Rol implements Serializable{
     }
 
     public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Rol(Long id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+
+    public Rol() {
+        super();
+    }
+
+    public Rol(String nombre) {
         this.nombre = nombre;
     }
     

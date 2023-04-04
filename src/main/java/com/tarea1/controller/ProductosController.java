@@ -84,5 +84,68 @@ public class ProductosController {
         model.addAttribute("productos", listaProductos);
         return "prueba";
     }
-
+    
+    //Principal
+    @GetMapping("/principal")
+    public String getProductsPrincipal(Model model) {
+        List<Productos> listaProductos = productosService.listProductos();
+        model.addAttribute("productos", listaProductos);
+        return "principal";
+    }
+    
+    //Ofertas Hombre
+    @GetMapping("/ofertasHombre")
+    public String getProductsOfertasH(Model model) {
+        List<Productos> listaProductos = productosService.listProductos();
+        model.addAttribute("productos", listaProductos);
+        return "ofertasHombre";
+    }
+    
+    //Ofertas Mujer
+    @GetMapping("/ofertasMujer")
+    public String getProductsOfertasM(Model model) {
+        List<Productos> listaProductos = productosService.listProductos();
+        model.addAttribute("productos", listaProductos);
+        return "ofertasMujer";
+    }
+    
+    //Mujer
+    @GetMapping("/mujer")
+    public String getProductM(Model model) {
+        List<Productos> listaProductos = productosService.listProductos();
+        model.addAttribute("productos", listaProductos);
+        return "mujer";
+    }
+    
+    //Hombre
+    @GetMapping("/hombre")
+    public String getProductsH(Model model) {
+        List<Productos> listaProductos = productosService.listProductos();
+        model.addAttribute("productos", listaProductos);
+        return "hombre";
+    }
+    
+    //Deportiva
+    @GetMapping("/deportiva")
+    public String getProductsDeportiva(Model model) {
+        List<Productos> listaProductos = productosService.listProductos();
+        model.addAttribute("productos", listaProductos);
+        return "deportiva";
+    }
+    
+    //Calzado
+    @GetMapping("/calzado")
+    public String getProductsCalzado(Model model) {
+        List<Productos> listaProductos = productosService.listProductos();
+        model.addAttribute("productos", listaProductos);
+        return "calzado";
+    }
+    
+    //Joyeria
+    @GetMapping("/joyeria")
+    public String getProductsJoyeria(Model model) {
+        List<Productos> listaProductos = productosService.listProductos();
+        model.addAttribute("productos", listaProductos);
+        return "joyeria";
+    }
 }
