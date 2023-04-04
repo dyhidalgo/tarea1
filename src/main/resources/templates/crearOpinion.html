@@ -6,7 +6,7 @@
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
     </head>
-    <body>
+    <body class="bg-body-secondary">
         <header th:replace="layout/plantilla:: header"></header>
         <section th:fragment="creaOpin">
             <form th:object="${opinion}" th:action="@{/saveOpinion}" method="POST">
