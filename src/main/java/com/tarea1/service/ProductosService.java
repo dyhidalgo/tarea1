@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.tarea1.service;
 
 import com.tarea1.entity.Productos;
@@ -10,10 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author Diker Hidalgo
- */
 @Service
 public class ProductosService implements IProductosService {
 
@@ -35,11 +27,19 @@ public class ProductosService implements IProductosService {
     public void saveProductos(Productos productos) {
         productosRepository.save(productos);
     }
-    
+
     @Override
     public void delete(long id) {
         productosRepository.deleteById(id);
     }
-    
-    
+
+    @Override
+    public List<Productos> getByKeyword(String Keyword) {
+        return productosRepository.findByKeyword(Keyword);
+    }
+
+    @Override
+    public List<Productos> getAllProductos() {
+        return (List<Productos>) productosRepository.findAll();
+    }
 }

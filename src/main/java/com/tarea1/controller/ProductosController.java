@@ -31,6 +31,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ProductosController {
@@ -147,5 +148,19 @@ public class ProductosController {
         List<Productos> listaProductos = productosService.listProductos();
         model.addAttribute("productos", listaProductos);
         return "joyeria";
+    }
+    
+        @RequestMapping(path = {"/search"})
+    public String home(Productos productos, Model model, String keyword){
+        if(keyword!=null){
+            List<Productos> listaProductos = productosService.getByKeyword(keyword);
+            model.addAttribute("productos",listaProductos);
+        }else{
+            List<Productos> listaProductos  = productosService.getAllProductos();
+            model.addAttribute("productos",listaProductos);
+            return "productos";
+        }
+        return "productos";
+      
     }
 }
