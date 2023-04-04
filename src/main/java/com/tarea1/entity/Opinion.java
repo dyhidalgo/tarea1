@@ -15,25 +15,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Opinion implements Serializable {
 
     @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_opinion")
+    private long id_opinion;
     
     private String nombre;
     private String correo;
     private String comentario;
     
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    
-   
-    public long getId() {
-        return id;
+//    @ManyToOne
+//    @JoinColumn(name = "id_usuario")
+
+    public long getId_opinion() {
+        return id_opinion;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId_opinion(long id_opinion) {
+        this.id_opinion = id_opinion;
     }
-
     public String getNombre() {
         return nombre;
     }

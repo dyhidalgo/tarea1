@@ -47,11 +47,12 @@
                                         </li>
                                         
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/opinion.html" style="padding-right: 100px;">Opinion</a>
+                                            <a class="nav-link" href="/opinion" style="padding-right: 100px;">Opinion</a>
                                         </li>
                                         
                                         <li class="nav-item">
-                                            <a class="nav-link" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/productosN"} style="padding-right: 100px;">Inventario</a>
+                                            <a class="nav-link" href="/productos" style="padding-right: 100px;">Inventario</a>
+                                            <!--sec:authorize="hasRole('ROLE_ADMIN')"  -->
                                         </li>
                                     </ul>
                                     <ul class="navbar-nav ml-auto">

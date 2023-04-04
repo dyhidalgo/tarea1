@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace="layout/plantilla:: head">
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header th:replace="layout/plantilla:: header"></header>
+        <section th:fragment="creaOpin">
+            <form th:object="${opinion}" th:action="@{/saveOpinion}" method="POST">
+
+                <input type="hidden" th:field="*{id_opinion}" />
+
+                <div class="row">
+
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label" for="nombre">Nombre</label>
+                            <input type="text" class="form-control" th:field="*{nombre}" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="correo">Correo</label>
+                            <input type="text" class="form-control" th:field="*{correo}" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="comentario">Comentario</label>
+                            <input type="text" class="form-control" th:field="*{comentario}" />
+                        </div>
+
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary me-5">Enviar Comentario</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </form>
+            </div>    
+        </section>
+    </body>
+</html>

@@ -173,7 +173,7 @@ public class ProductosController {
     @GetMapping("/opinion")
     public String indexO(Model model) {
         List<Opinion> listaOpinion = opinionService.listOpinion();
-        //  model.addAttribute("titulo", "Tabla Productos");
+        model.addAttribute("titulo", "Tabla Productos");
         model.addAttribute("opinion", listaOpinion);
         return "opinion";
     }
@@ -182,11 +182,11 @@ public class ProductosController {
     public String crearOpinion(Model model) {
         List<Opinion> listaOpinion = opinionService.getAllOpinion();
         model.addAttribute("opinion", new Opinion());
-        model.addAttribute("Opinion", listaOpinion);
-        return "crearO";
+        //model.addAttribute("opinion", listaOpinion);
+        return "crearOpinion";
     }
 
-    @PostMapping("/saveO")
+    @PostMapping("/saveOpinion")
     public String guardarOpinion(@ModelAttribute Opinion opinion) {
         opinionService.saveOpinion(opinion);
         return "redirect:/opinion";
