@@ -6,6 +6,7 @@ package com.tarea1.controller;
 
 /*Importacion de entidades del proyecto*/
 import com.tarea1.entity.Categorias;
+import com.tarea1.entity.Opinion;
 /*import com.tarea1.entity.Comentarios;
 import com.tarea1.entity.DetalleOrden;
 import com.tarea1.entity.Tipo;
@@ -16,6 +17,7 @@ import com.tarea1.entity.Productos;
 
 /*Importacion de interfaces del proyecto*/
 import com.tarea1.service.ICategoriasService;
+import com.tarea1.service.IOpinionService;
 /*import com.tarea1.service.IComentariosService;
 import com.tarea1.service.IDetalleOrdenService;
 import com.tarea1.service.IOrdenesService;*/
@@ -41,6 +43,9 @@ public class ProductosController {
 
     @Autowired
     private IProductosService productosService;
+
+    @Autowired
+    private IOpinionService opinionService;
 
     @GetMapping("/productos")
     public String index(Model model) {
@@ -85,7 +90,7 @@ public class ProductosController {
         model.addAttribute("productos", listaProductos);
         return "prueba";
     }
-    
+
     //Principal
     @GetMapping("/principal")
     public String getProductsPrincipal(Model model) {
@@ -93,7 +98,7 @@ public class ProductosController {
         model.addAttribute("productos", listaProductos);
         return "principal";
     }
-    
+
     //Ofertas Hombre
     @GetMapping("/ofertasHombre")
     public String getProductsOfertasH(Model model) {
@@ -101,7 +106,7 @@ public class ProductosController {
         model.addAttribute("productos", listaProductos);
         return "ofertasHombre";
     }
-    
+
     //Ofertas Mujer
     @GetMapping("/ofertasMujer")
     public String getProductsOfertasM(Model model) {
@@ -109,7 +114,7 @@ public class ProductosController {
         model.addAttribute("productos", listaProductos);
         return "ofertasMujer";
     }
-    
+
     //Mujer
     @GetMapping("/mujer")
     public String getProductM(Model model) {
@@ -117,7 +122,7 @@ public class ProductosController {
         model.addAttribute("productos", listaProductos);
         return "mujer";
     }
-    
+
     //Hombre
     @GetMapping("/hombre")
     public String getProductsH(Model model) {
@@ -125,7 +130,7 @@ public class ProductosController {
         model.addAttribute("productos", listaProductos);
         return "hombre";
     }
-    
+
     //Deportiva
     @GetMapping("/deportiva")
     public String getProductsDeportiva(Model model) {
@@ -133,7 +138,7 @@ public class ProductosController {
         model.addAttribute("productos", listaProductos);
         return "deportiva";
     }
-    
+
     //Calzado
     @GetMapping("/calzado")
     public String getProductsCalzado(Model model) {
@@ -141,7 +146,7 @@ public class ProductosController {
         model.addAttribute("productos", listaProductos);
         return "calzado";
     }
-    
+
     //Joyeria
     @GetMapping("/joyeria")
     public String getProductsJoyeria(Model model) {
@@ -149,18 +154,42 @@ public class ProductosController {
         model.addAttribute("productos", listaProductos);
         return "joyeria";
     }
-    
-        @RequestMapping(path = {"/search"})
-    public String home(Productos productos, Model model, String keyword){
-        if(keyword!=null){
+
+    @RequestMapping(path = {"/search"})
+    public String home(Productos productos, Model model, String keyword) {
+        if (keyword != null) {
             List<Productos> listaProductos = productosService.getByKeyword(keyword);
-            model.addAttribute("productos",listaProductos);
-        }else{
-            List<Productos> listaProductos  = productosService.getAllProductos();
-            model.addAttribute("productos",listaProductos);
+            model.addAttribute("productos", listaProductos);
+        } else {
+            List<Productos> listaProductos = productosService.getAllProductos();
+            model.addAttribute("productos", listaProductos);
             return "productos";
         }
         return "productos";
-      
+
     }
+
+    //Clase Opinion de Usuarios
+    @GetMapping("/opinion")
+    public String indexO(Model model) {
+        List<Opinion> listaOpinion = opinionService.listOpinion();
+        //  model.addAttribute("titulo", "Tabla Productos");
+        model.addAttribute("opinion", listaOpinion);
+        return "opinion";
+    }
+
+    @GetMapping("/opinionN")
+    public String crearOpinion(Model model) {
+        List<Opinion> listaOpinion = opinionService.getAllOpinion();
+        model.addAttribute("opinion", new Opinion());
+        model.addAttribute("Opinion", listaOpinion);
+        return "crearO";
+    }
+
+    @PostMapping("/saveO")
+    public String guardarOpinion(@ModelAttribute Opinion opinion) {
+        opinionService.saveOpinion(opinion);
+        return "redirect:/opinion";
+    }
+
 }
