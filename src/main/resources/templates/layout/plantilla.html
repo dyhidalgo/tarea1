@@ -22,8 +22,8 @@
                         <nav class="navbar navbar-expand-lg navbar-light bg-dark-subtle p-0">
                             <div class="container">
                                 <!--<h1>Bienvenido <span sec:authentication="principal.username"></h1>-->
-                                <a class="navbar-brand" href="/principal">
-                                    <img src="imagenes/logo.png" alt="Logo" style="max-height: 80px; padding-right: 100px;" >
+                                <a class="navbar-brand" th:href="@{/principal}">
+                                    <img th:src="@{imagenes/logo.png}" alt="Logo" style="max-height: 80px; padding-right: 100px;" >
                                 </a>
                                 <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                                     <span class="navbar-toggler-icon"></span>
@@ -45,31 +45,43 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="/joyeria" style="padding-right: 100px;">Joyeria</a>
                                         </li>
-                                        
+
                                         <li class="nav-item">
                                             <a class="nav-link" href="/opinion" style="padding-right: 100px;">Opinion</a>
                                         </li>
                                         
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/productos" style="padding-right: 100px;">Inventario</a>
-                                            <!--sec:authorize="hasRole('ROLE_ADMIN')"  -->
+                                            <a class="nav-link" th:href="@{/compras}" style="padding-right: 100px;">Compras</a>
+                                        </li>
+                                        
+                                        <li class="nav-item">
+                                            <a sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link" th:href="@{/usuarios}" style="padding-right: 100px;">Usuarios</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link" href="/productos" style="padding-right: 100px;">Inventario</a>
                                         </li>
                                     </ul>
+                                    <form class="form-inline my-2 my-lg-0" method="post" th:action="@{/search}">
+                                        <input class="form-control mr-sm-2" type="search"
+                                               placeholder="Buscar" aria-label="Search" name="nombre"
+                                               autocomplete="off">
+                                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                                    </form>
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">
+                                            <a class="nav-link" th:href="@{/getCart}">
                                                 <img src="imagenes/carrito.png" alt="Carrito" style="max-height: 30px;">
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">
+                                            <a class="nav-link" th:href="@{/login}">
                                                 <img src="imagenes/login.png" alt="Login" style="max-height: 30px;">
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">
                                                 <img sec:authorize = "isAuthenticated()"><a th:href="@{logout}">Logout</a>
-                                                    
                                             </a>
                                         </li>
                                     </ul>

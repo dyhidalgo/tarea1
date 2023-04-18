@@ -3,6 +3,7 @@ package com.tarea1.service;
 import com.tarea1.entity.Productos;
 import com.tarea1.repository.ProductosRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,5 +42,10 @@ public class ProductosService implements IProductosService {
     @Override
     public List<Productos> getAllProductos() {
         return (List<Productos>) productosRepository.findAll();
+    }
+
+    @Override
+    public Optional<Productos> get(Long id) {
+        return productosRepository.findById(id);
     }
 }

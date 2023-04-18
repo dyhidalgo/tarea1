@@ -1,6 +1,8 @@
 package com.tarea1.controller;
 
+import com.tarea1.entity.Usuario;
 import com.tarea1.service.UsuarioService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,6 +10,7 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -22,6 +25,9 @@ public class SecurityConfig {
 
     @Autowired
     private UsuarioService usuarioService;
+    
+    @Autowired 
+    private HttpServletRequest request;
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -30,7 +36,7 @@ public class SecurityConfig {
 
     //@Autowired
     public void configurerGlobal(AuthenticationManagerBuilder build) throws Exception {
-        build.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+        build.userDetailsService(usuarioService).passwordEncoder(passwordEncoder());
     }
 
     @Bean
@@ -58,9 +64,20 @@ public class SecurityConfig {
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/login?logout")
                 .permitAll();
+
+        
         return http.build();
     }
-
+//    @Bean
+//    protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+//        http
+//                .authorizeRequests()
+//                .requestMatchers("/**").permitAll();
+//        http.csrf().disable();
+//
+//        return http.build();
+//    }
+   
 }
 /*
 
@@ -77,4 +94,4 @@ public class SecurityConfig {
                 .and()
                 .formLogin()
                 .loginPage("/login");
-*/
+ */

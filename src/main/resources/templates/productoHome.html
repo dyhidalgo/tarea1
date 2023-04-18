@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/plantilla :: head">
+        <!-- Bootstrap core CSS -->
+
+
+    </head>
+    <header th:replace="layout/plantilla :: header"></header>
+    <body>
+        <div class="container" style="padding-top: 50px;">
+            <!-- Blog Post -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <a href="#"> <img class="img-fluid rounded"
+                                              th:src="@{'/imagenes/' + ${productos.getNombre_imagen}}" alt="" style="height: 300px; width=300px;">
+                            </a>
+                        </div>
+                        <div class="col-lg-6">
+                            <form th:action="@{/cart}" method="POST">
+                                <input type="hidden" th:value="${productos.id}" name="id">
+                                <h2 class="card-title" th:text="${productos.nombre_producto}"></h2>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item"><h5 th:text=" 'Precio: '+ ${productos.precio_producto} "></h5></li>
+                                    <li class="list-group-item">
+                                        <p th:text=" 'Descripción: '+ ${productos.descripcion_producto} "></p>
+                                    </li>
+                                    <li class="list-group-item"><h6>
+                                            Cantidad: <input type="number" id="cantidad" name="cantidad"
+                                                             autocomplete="off" min="1" max="5" value="1">
+                                        </h6></li>
+                                </ul>
+
+
+                                <button type="submit" class="btn btn-dark">Añadir al
+                                    carrito</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Footer -->
+        <div></div>
+    </body>
+</html>

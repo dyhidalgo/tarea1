@@ -64,8 +64,6 @@ public class Productos implements Serializable {
         this.nombre_imagen = nombre_imagen;
     }
 
-    
-    
     public void setCategorias(Categorias categorias) {
         this.categorias = categorias;
     }
