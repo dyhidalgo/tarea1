@@ -337,8 +337,8 @@ public class ProductosController {
         return "redirect:/principal";
     }
 
-    //implementar la parte de la busqueda
-    @PostMapping("/search")
+    //implementar la parte de la busqueda (Hombre)
+    @PostMapping("/search") 
     public String searchProduct(@RequestParam String nombre, Model model) {
         log.info("Nombre del producto {}" + nombre);
         List<Productos> productos = productosService.getAllProductos().stream().filter(p -> p.getNombre_producto()
@@ -347,7 +347,70 @@ public class ProductosController {
         model.addAttribute("productos", productos);
         return "/hombre";
     }
-
+    
+    //implementar la parte de la busqueda (Hombre)
+    @PostMapping("/searchMujer") 
+    public String searchProductMujer(@RequestParam String nombre, Model model) {
+        log.info("Nombre del producto {}" + nombre);
+        List<Productos> productos = productosService.getAllProductos().stream().filter(p -> p.getNombre_producto()
+                .contains(nombre))
+                .collect(Collectors.toList());
+        model.addAttribute("productos", productos);
+        return "/mujer";
+    }
+    
+    @PostMapping("/searchCalzado") 
+    public String searchProductCalzado(@RequestParam String nombre, Model model) {
+        log.info("Nombre del producto {}" + nombre);
+        List<Productos> productos = productosService.getAllProductos().stream().filter(p -> p.getNombre_producto()
+                .contains(nombre))
+                .collect(Collectors.toList());
+        model.addAttribute("productos", productos);
+        return "/calzado";
+    }
+    
+    @PostMapping("/searchDeportiva") 
+    public String searchProductDeportiva(@RequestParam String nombre, Model model) {
+        log.info("Nombre del producto {}" + nombre);
+        List<Productos> productos = productosService.getAllProductos().stream().filter(p -> p.getNombre_producto()
+                .contains(nombre))
+                .collect(Collectors.toList());
+        model.addAttribute("productos", productos);
+        return "/deportiva";
+    }
+    
+    @PostMapping("/searchJoyeria") 
+    public String searchProductJoyeria(@RequestParam String nombre, Model model) {
+        log.info("Nombre del producto {}" + nombre);
+        List<Productos> productos = productosService.getAllProductos().stream().filter(p -> p.getNombre_producto()
+                .contains(nombre))
+                .collect(Collectors.toList());
+        model.addAttribute("productos", productos);
+        return "/joyeria";
+    }
+    
+    @PostMapping("/searchOfertasM") 
+    public String searchProductOfertasM(@RequestParam String nombre, Model model) {
+        log.info("Nombre del producto {}" + nombre);
+        List<Productos> productos = productosService.getAllProductos().stream().filter(p -> p.getNombre_producto()
+                .contains(nombre))
+                .collect(Collectors.toList());
+        model.addAttribute("productos", productos);
+        return "/ofertasMujer";
+    }
+    
+    @PostMapping("/searchOfertasH") 
+    public String searchProductOfertasH(@RequestParam String nombre, Model model) {
+        log.info("Nombre del producto {}" + nombre);
+        List<Productos> productos = productosService.getAllProductos().stream().filter(p -> p.getNombre_producto()
+                .contains(nombre))
+                .collect(Collectors.toList());
+        model.addAttribute("productos", productos);
+        return "/ofertasHombre";
+    }
+    
+    
+    
     //ver las compras del usuario por usuario
     @GetMapping("/compras")
     public String obtenerCompras(HttpSession session, Model model) {

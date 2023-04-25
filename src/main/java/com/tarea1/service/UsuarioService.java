@@ -46,15 +46,6 @@ public class UsuarioService implements IUsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-//    @Override
-//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//       Usuario usuario = usuarioRepository.findByEmail(username);
-//        if(usuario == null){
-//            throw new UsernameNotFoundException("Usuario o password invalidos");
-//        }
-//        return new User(usuario.getEmail(), usuario.getPassword(), mapearAutoridadesRoles(usuario.getRoles()));
-//    }
-    
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
        log.info("Este es el username");

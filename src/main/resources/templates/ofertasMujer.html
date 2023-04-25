@@ -7,6 +7,17 @@
     </head>
     <header th:replace="layout/plantilla :: header"></header>
     <body class="bg-body-secondary">
+        <div class="container">
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6">
+                    <form class="form-inline text-center" th:action="@{/searchOfertasM}" method="post">
+                        <div class="form-group mb-2">
+                            <input type="text" name="nombre" class="form-control" id="busqueda" placeholder="Buscar">
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2" style="align-items: center;">Buscar</button>
+                    </form>
+                </div>
+        </div>
         <div class="Container">
             <div class="container mt-5">
                 <!-- Creamos una fila para la lista de productos -->

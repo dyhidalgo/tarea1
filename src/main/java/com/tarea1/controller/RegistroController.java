@@ -29,6 +29,4 @@ public class RegistroController {
     public String verPaginaInicio() {
         return "principal";
     }
-    
-    
 }

@@ -58,7 +58,7 @@
 -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="layout/plantilla :: head">
 <meta charset="utf-8">
 <title>Inicio de sesión</title>
 <!-- Latest compiled and minified CSS -->
@@ -76,27 +76,28 @@
 <body class="bg-body-secondary">
 
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#" th:href="@{/}">Registro y
-					inicio de sesión</a>
-			</div>
-		</div>
-	</nav>
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark-subtle p-0">
+      <div class="container">
+        <a class="navbar-brand" href="#">The Street Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Iniciar Sesión</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
 	<br>
 	<br>
 
 	<div class="container">
-		<div class="row">
+		<div class="row justify-content-center">
 			<div class="col-md-6 col-md-offset-3">
 				<h1>Inicio de sesión</h1>
 				<form th:action="@{/login}" method="post">

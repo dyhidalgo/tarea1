@@ -38,7 +38,8 @@
                             <a class="nav-link" href="/joyeria">Joyeria</a>
                         </li>
                         <li class="nav-item mx-3 my-2">
-                            <a class="nav-link" href="/opinion">Opinion</a>
+                            <a class="nav-link" sec:authorize="hasRole('ROLE_ADMIN')" href="/opinion">[[#{header.opinion}]]</a>
+                            <a class="nav-link" sec:authorize="!hasRole('ROLE_ADMIN')" href="/opinionN">[[#{header.opinion}]]</a>
                         </li>
                         <li class="nav-item mx-3 my-2"> 
                             <a class="nav-link" th:href="@{/compras}">Compras</a>
