@@ -4,7 +4,7 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head th:fragment="head">
         <meta charset="utf-8">
-            <title>Tienda de productos</title>
+            <title>[[#{aplicacion.titulo}]]</title>
             <!-- Agregamos el archivo CSS de Bootstrap -->
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -36,31 +36,31 @@
                                     <div class="collapse navbar-collapse" id="navbarCollapse">
                                         <ul class="navbar-nav mr-auto">
                                             <li class="nav-item mx-3 my-2">
-                                                <a class="nav-link" href="/deportiva">Deportiva</a>
+                                                <a class="nav-link" href="/deportiva">[[#{header.deportiva}]]</a>
                                             </li>
                                             <li class="nav-item mx-3 my-2">
-                                                <a class="nav-link" href="/hombre">Hombre</a>
+                                                <a class="nav-link" href="/hombre">[[#{header.hombre}]]</a>
                                             </li>
                                             <li class="nav-item mx-3 my-2">
-                                                <a class="nav-link" href="/mujer">Mujer</a>
+                                                <a class="nav-link" href="/mujer">[[#{header.mujer}]]</a>
                                             </li>
                                             <li class="nav-item mx-3 my-2">
-                                                <a class="nav-link" href="/calzado">Calzado</a>
+                                                <a class="nav-link" href="/calzado">[[#{header.calzado}]]</a>
                                             </li>
                                             <li class="nav-item mx-3 my-2">
-                                                <a class="nav-link" href="/joyeria">Joyeria</a>
+                                                <a class="nav-link" href="/joyeria">[[#{header.joyeria}]]</a>
                                             </li>
                                             <li class="nav-item mx-3 my-2">
-                                                <a class="nav-link" href="/opinion">Opinion</a>
+                                                <a class="nav-link" href="/opinion">[[#{header.opinion}]]</a>
                                             </li>
                                             <li class="nav-item mx-3 my-2"> 
-                                                <a class="nav-link" th:href="@{/compras}">Compras</a>
+                                                <a class="nav-link" th:href="@{/compras}">[[#{header.compras}]]</a>
                                             </li>
                                             <li class="nav-item mx-3 my-2">
-                                                <a class="nav-link"  sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/usuarios}">Usuarios</a>
+                                                <a class="nav-link"  sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/usuarios}">[[#{header.usuarios}]]</a>
                                             </li>
                                             <li class="nav-item mx-3 my-2">
-                                                <a class="nav-link" sec:authorize="hasRole('ROLE_ADMIN')" href="/productos" style="padding-right: 100px;">Inventario</a>
+                                                <a class="nav-link" sec:authorize="hasRole('ROLE_ADMIN')" href="/productos" style="padding-right: 100px;">[[#{header.inventario}]]</a>
                                             </li>
                                         </ul> 
                                         <ul class="navbar-nav mr-auto">
@@ -84,5 +84,114 @@
                                 </div>
                             </nav>
                         </header>
+                        
+                        <!-- Footer -->
+                        <footer th:fragment="footer" class="text-center text-lg-start bg-light-subtle text-muted">
+                        
+                            <!-- Section: Social media -->
+                            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+
+
+
+
+                                <!-- Right -->
+                                <div>
+                                    <a href="" class="me-4 link-secondary">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="" class="me-4 link-secondary">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="" class="me-4 link-secondary">
+                                        <i class="fab fa-google"></i>
+                                    </a>
+                                    <a href="" class="me-4 link-secondary">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="" class="me-4 link-secondary">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                    <a href="" class="me-4 link-secondary">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                                <!-- Right -->
+                            </section>
+                            <!-- Section: Social media -->
+
+                            <!-- Section: Links  -->
+                            <section class="">
+                                <div class="container text-center text-md-start mt-5">
+                                    <!-- Grid row -->
+                                    <div class="row mt-3">
+                                        <!-- Grid column -->
+                                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                                            <!-- Content -->
+                                            <h6 class="text-uppercase fw-bold mb-4">
+                                                <i class="fas fa-gem me-3 text-secondary"></i>[[#{footer.Acercadenuestratienda}]]
+                                            </h6>
+                                            <p>
+                                                 
+                                            [[#{footer.TheStreetStorenacedesdehace2años,conelobjetivodebrindarlasúltimastendenciasdelmercado.Noscaracterizaunestilocasualymodernoentodasnuestrasprendasyaccesorios,loscualeselegimospensandosiempreencomplacerlavariedaddegustosconprendasdecalidad}]]
+
+                                            </p>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                                            <!-- Content -->
+                                            <h6 class="text-uppercase fw-bold mb-4">
+                                                <i class="fas fa-gem me-3 text-secondary"></i>[[#{footer.Servicioalcliente}]]
+                                            </h6>
+                                            <p>
+                                                [[#{footer.¿Tenésalgunadudaocomentario?}]]
+                                                [[#{footer.Llámanosal4000-3020}]]
+                                            </p>
+                                        </div>                                    
+
+
+                                        <!-- Grid column -->
+
+                                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                                            <!-- Content -->
+                                            <h6 class="text-uppercase fw-bold mb-4">
+                                                <i class="fas fa-gem me-3 text-secondary"></i>[[#{footer.Contacto}]]
+                                            </h6>
+                                            <p>
+                                                Heredia, Canton Central
+                                                thestreetstore@gmail.com
+
+
+                                            </p>
+
+                                            <p>
+                                                6666-6666 / 4444-4444
+
+
+                                            </p>
+                                        </div>
+
+
+
+                                    </div>
+                                    <!-- Grid row -->
+                                </div>
+                            </section>
+                            <!-- Section: Links  -->
+
+                            <!-- Copyright -->
+                            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+                                © 2023 Copyright:
+                                <a class="text-reset fw-bold" href="The Street Store">[[#{footer.Todoslosderechosreservados}]]</a>
+
+                                <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                                   th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+                                <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                                   th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
+                            </div>
+                            <!-- Copyright -->
+                        </footer>
+                        <!-- Footer -->
+                        
                     </body>
                     </html>

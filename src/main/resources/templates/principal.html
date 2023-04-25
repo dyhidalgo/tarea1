@@ -18,27 +18,30 @@
                     <div class="col-md-3"  style="width:  350px;">
                         <!-- Creamos una tarjeta para cada producto -->
                         <div class="card mb-3" >
-                            <h1 style="text-align: center">Mujer</h1>
+                            <h1 style="text-align: center">[[#{principal.Mujer}]]</h1>
                             <img class="card-img-top" src="https://imgs.search.brave.com/j5Jq46ZHIMm06JkEDwrwxc-Z24kFihvvs8i6gRp1h9Q/rs:fit:512:512:1/g:ce/aHR0cHM6Ly9pbWFn/ZXMudmV4ZWxzLmNv/bS9tZWRpYS91c2Vy/cy8zLzIwOTYzMi9p/c29sYXRlZC9wcmV2/aWV3L2ZiODc1OWQy/MTRiYjljZWVlZGEw/N2Q4MDlmZGY0MWFm/LTUwLWRpc2NvdW50/LWxhYmVsLWNvbG9y/ZnVsLWJ5LXZleGVs/cy5wbmc" alt="Producto" height="350px"/>
                             <div class="card-body">
-                                <h5 class="card-title" >Ofertas</h5>                              
-                                <a href="/ofertasMujer" class="btn btn-primary">Ver</a>
+                                <h5 class="card-title" >[[#{principal.Ofertas}]]</h5>                               
+                                <a href="/ofertasMujer" class="btn btn-primary">[[#{principal.Ver}]]</a>
                             </div>
                         </div>
                     </div>
                     <div  class="col-md-3"  style="width:  350px;">
                         <!-- Creamos una tarjeta para cada producto -->
                         <div class="card mb-3" >
-                            <h1 style="text-align: center">Hombre</h1>
+                            <h1 style="text-align: center">[[#{principal.Hombre}]]</h1>
                             <img class="card-img-top" src="https://imgs.search.brave.com/xSprpWC_XSVd0dsdM4NK9ykOkiB9RzmpZyOFOqxFiVk/rs:fit:500:500:1/g:ce/aHR0cDovL2V0ZWNo/cmVjeWNsZXJzLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAx/NS8wOS9kaXNjb3Vu/dC1pY29uLnBuZw"  alt="Producto" height="350px"/>
                             <div class="card-body">
-                                <h5 class="card-title" >Ofertas</h5>
-                                <a href="/ofertasHombre" class="btn btn-primary">Ver</a>
+                                <h5 class="card-title" >[[#{principal.Ofertas}]]</h5>
+                                <a href="/ofertasHombre" class="btn btn-primary">[[#{principal.Ver}]]</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <footer th:replace="layout/plantilla :: footer">
+        
+    </footer>
     </body>
 </html>

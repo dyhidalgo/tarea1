@@ -70,17 +70,17 @@
                 </div>
             </nav>
         </header>
-        
+
         <!-- Page Content -->
         <div class="container">
             <!-- Page Heading/Breadcrumbs -->
             <h1 class="mt-4 mb-3">
-                <small>Carrito</small>
+                <small>[[#{carrito.Carrito}]]</small>
             </h1>
 
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a th:href="@{/principal}">Home</a></li>
-                <li class="breadcrumb-item active">Carrito</li>
+                <li class="breadcrumb-item active">[[#{carrito.Carrito}]]</li>
             </ol>
 
             <!-- Blog Post -->
@@ -91,11 +91,11 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Producto</th>
-                                        <th scope="col">Precio</th>
-                                        <th scope="col">Cantidad</th>
-                                        <th scope="col">Total</th>
-                                        <th scope="col">Acción</th>
+                                        <th scope="col">[[#{carrito.Producto}]]</th>
+                                        <th scope="col">[[#{carrito.Precio}]]</th>
+                                        <th scope="col">[[#{carrito.Cantidad}]]</th>
+                                        <th scope="col">[[#{carrito.Total}]]</th>
+                                        <th scope="col">[[#{carrito.Acción}]]</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -104,7 +104,7 @@
                                         <td th:text="${dorden.precio}"></td>
                                         <td th:text="${dorden.cantidad}"></td>
                                         <td th:text="${dorden.total}"></td>
-                                        <td><a th:href="@{/delete/cart/{id} (id=${dorden.productos.id}) }" class="btn btn-danger">Quitar</a></td>
+                                        <td><a th:href="@{/delete/cart/{id} (id=${dorden.productos.id}) }" class="btn btn-danger">[[#{carrito.Quitar}]]</a></td>
                                     </tr>
                                 </tbody>
 
@@ -116,7 +116,7 @@
 
                             <ul class="list-group">
                                 <li class="list-group-item"><h5 th:text="${orden.total}"></h5></li>
-                                <a th:href="@{/order}" class="btn btn-dark">Ver Orden</a>
+                                <a th:href="@{/order}" class="btn btn-dark">[[#{carrito.VerOrden}]]</a>
                             </ul>
                         </div>
 
@@ -129,11 +129,11 @@
         </div>
         <!-- /.container -->
 
-        <!-- Footer -->
+
         <div></div>
 
         <!-- Bootstrap core JavaScript -->
-
+        
 
     </body>
 

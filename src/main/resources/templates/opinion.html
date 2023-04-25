@@ -7,15 +7,15 @@
     <body class="bg-body-secondary">
         <header th:replace="layout/plantilla:: header"></header>
         
-        <h2>Comentarios de otros usuarios</h2>
+        <h2>[[#{opinion.Comentariosdeotrosusuarios}]]</h2>
         <h1 ></h1> <!---->
         <table class="table table-hover table-striped">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Correo</th>
-                    <th scope="col">Comentario</th>
+                    <th scope="col">[[#{opinion.Nombre}]]</th>
+                    <th scope="col">[[#{opinion.Correo}]]</th>
+                    <th scope="col">[[#{opinion.Comentario}]]</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,7 +30,10 @@
             </tbody>
         </table>
         <!--<section th:replace="layout/crearOpinion :: creaOpin"></section>-->
+        
+         <footer th:replace="layout/plantilla :: footer">
+    </footer>
     </body>
     
-   
+  
 </html>

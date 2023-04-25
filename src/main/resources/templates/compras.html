@@ -25,12 +25,12 @@
 
       <!-- Page Heading/Breadcrumbs -->
       <h1 class="mt-4 mb-3">
-        <small>Compras</small>
+        <small>[[#{compras.Compras}]]</small>
       </h1>
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a th:href="@{/principal}">Home</a></li>
-        <li class="breadcrumb-item active">Compras</li>
+        <li class="breadcrumb-item active">[[#{compras.Compras}]]</li>
       </ol>
 
       <!-- Blog Post -->
@@ -41,10 +41,10 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">No. de Orden</th>
-                  <th scope="col">Fecha</th>
-                  <th scope="col">Valor</th>
-                  <th scope="col">Acción</th>
+                  <th scope="col">[[#{compras.No.deOrden}]]</th>
+                  <th scope="col">[[#{compras.Fecha}]]</th>
+                  <th scope="col">[[#{compras.Valor}]]</th>
+                  <th scope="col">[[#{compras.Acción}]]</th>
                 </tr>
               </thead>
               <tbody>
@@ -52,7 +52,7 @@
                   <td th:text="${orden.numero}"></td>
                   <td th:text="${orden.fechaCreacion}" ></td>
                   <td th:text="${orden.total}" ></td>
-                  <td><a th:href="@{/detalle/{id} (id=${orden.id}) }" class="btn btn-success">Ver Detalle</a></td>
+                  <td><a th:href="@{/detalle/{id} (id=${orden.id}) }" class="btn btn-success">[[#{compras.VerDetalle}]]</a></td>
                 </tr>
               </tbody>
             </table>
@@ -64,7 +64,9 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer></footer>
+<footer th:replace="layout/plantilla :: footer">
+        
+    </footer>
 </body>
 
 </html>

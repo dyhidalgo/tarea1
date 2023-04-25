@@ -27,18 +27,17 @@
 
   <!-- Page Heading/Breadcrumbs -->
   <h1 class="mt-4 mb-3">
-    Spring eCommerce <small>Usuarios</small>
   </h1>
 
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a th:href="@{/principal}">Home</a></li>
-    <li class="breadcrumb-item active">Ver Usuarios</li>
+    <li class="breadcrumb-item active">[[#{usuarios.VerUsuarios}]]</li>
   </ol>
-  <h2>Usuarios</h2>
+  <h2>[[#{usuarios.usuarios}]]</h2>
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">Nombre</th>
+        <th scope="col">[[#{usuarios.nombre}]]</th>
         <th scope="col">Email</th>
         
       </tr>
@@ -56,7 +55,9 @@
 
 <!-- Footer -->
 
-
+<footer th:replace="layout/plantilla :: footer">
+        
+    </footer>
 </body>
 
 </html>
