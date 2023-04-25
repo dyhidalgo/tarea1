@@ -9,104 +9,104 @@
 
 
 </head>
-    <body>
-        <header>
-                            <nav class="navbar navbar-expand-lg navbar-light bg-dark-subtle p-0">
-                                <div class="container">
-                                    <a class="navbar-brand" th:href="@{/principal}">
-                                        <img src="/imagenes/logo.png" alt="Logo" style="max-height: 80px; padding-right: 100px;">
-                                    </a>
-                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                                        <span class="navbar-toggler-icon"></span>
-                                    </button>
+<body>
+    <header th:fragment="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark-subtle p-0">
+            <div class="container">
+                <a class="navbar-brand" th:href="@{/principal}">
+                    <img th:src="@{/imagenes/logo.png}" alt="Logo" style="max-height: 80px; padding-right: 100px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                                        <ul class="navbar-nav mr-auto">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="/deportiva">Deportiva</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="/hombre">Hombre</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="/mujer">Mujer</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="/calzado">Calzado</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="/joyeria">Joyeria</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="/opinion">Opinion</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link" th:href="@{/usuarios}">Usuarios</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link" href="/productos">Inventario</a>
-                                            </li>
-                                            <li class="nav-item"> 
-                                               <a class="nav-link" th:href="@{/compras}" style="padding-right: 100px;">Compras</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" th:href="@{/getCart}">
-                                                    <img src="/imagenes/carrito.png" alt="Carrito" style="max-height: 30px;">
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" th:href="@{/login}">
-                                                    <img src="/imagenes/login.png" alt="Login" style="max-height: 30px;">
-                                                </a>
-                                            </li>
-
-                                            <li class="nav-item">
-                                                <a class="nav-link" th:href="@{logout}" sec:authorize="isAuthenticated()">
-                                                    <i class="fas fa-shopping-cart">Logout</i> 
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </nav>
-
-                        </header>
-        <div class="container" style="padding-top: 50px;">
-            
-            <!-- Blog Post -->
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <a> <img class="img-fluid rounded"
-                                              th:src="@{'/imagenes/' + ${productos.getNombre_imagen}}" alt="" style="height: 300px; width =300px;">
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item mx-3 my-2">
+                            <a class="nav-link" href="/deportiva">Deportiva</a>
+                        </li>
+                        <li class="nav-item mx-3 my-2">
+                            <a class="nav-link" href="/hombre">Hombre</a>
+                        </li>
+                        <li class="nav-item mx-3 my-2">
+                            <a class="nav-link" href="/mujer">Mujer</a>
+                        </li>
+                        <li class="nav-item mx-3 my-2">
+                            <a class="nav-link" href="/calzado">Calzado</a>
+                        </li>
+                        <li class="nav-item mx-3 my-2">
+                            <a class="nav-link" href="/joyeria">Joyeria</a>
+                        </li>
+                        <li class="nav-item mx-3 my-2">
+                            <a class="nav-link" href="/opinion">Opinion</a>
+                        </li>
+                        <li class="nav-item mx-3 my-2"> 
+                            <a class="nav-link" th:href="@{/compras}">Compras</a>
+                        </li>
+                        <li class="nav-item mx-3 my-2">
+                            <a class="nav-link"  sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/usuarios}">Usuarios</a>
+                        </li>
+                        <li class="nav-item mx-3 my-2">
+                            <a class="nav-link" sec:authorize="hasRole('ROLE_ADMIN')" href="/productos" style="padding-right: 100px;">Inventario</a>
+                        </li>
+                    </ul> 
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item mx-3 my-2">
+                            <a class="nav-link" th:href="@{/getCart}">
+                                <img src="/imagenes/carrito.png" alt="Carrito" style="max-height: 30px;">
                             </a>
-                        </div>
-                        <div class="col-lg-6">
-                            <form th:action="@{/cart}" method="POST">
-                                <input type="hidden" th:value="${productos.id}" name="id">
-                                <h2 class="card-title" th:text="${productos.nombre_producto}"></h2>
+                        </li>
+                        <li class="nav-item mx-3 my-2">
+                            <a class="nav-link" th:href="@{/login}">
+                                <img src="/imagenes/login.png" alt="Login" style="max-height: 30px;">
+                            </a>
+                        </li>
+                        <li class="nav-item mx-3 my-2">
+                            <a class="nav-link" th:href="@{logout}" sec:authorize="isAuthenticated()">
+                                <i class="fas fa-shopping-cart">Logout</i> 
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" style="padding-top: 50px;">
 
-                                <ul class="list-group">
-                                    <li class="list-group-item"><h5 th:text=" 'Precio: '+ ${productos.precio_producto} "></h5></li>
-                                    <li class="list-group-item">
-                                        <p th:text=" 'Descripción: '+ ${productos.descripcion_producto} "></p>
-                                    </li>
-                                    <li class="list-group-item"><h6>
-                                            Cantidad: <input type="number" id="cantidad" name="cantidad"
-                                                             autocomplete="off" min="1" max="5" value="1">
-                                        </h6></li>
-                                </ul>
+        <!-- Blog Post -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a> <img class="img-fluid rounded"
+                                 th:src="@{'/imagenes/' + ${productos.getNombre_imagen}}" alt="" style="height: 300px; width :300px;">
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <form th:action="@{/cart}" method="POST">
+                            <input type="hidden" th:value="${productos.id}" name="id">
+                            <h2 class="card-title" th:text="${productos.nombre_producto}"></h2>
+
+                            <ul class="list-group">
+                                <li class="list-group-item"><h5 th:text=" 'Precio: '+ ${productos.precio_producto} "></h5></li>
+                                <li class="list-group-item">
+                                    <p th:text=" 'Descripción: '+ ${productos.descripcion_producto} "></p>
+                                </li>
+                                <li class="list-group-item"><h6>
+                                        Cantidad: <input type="number" id="cantidad" name="cantidad"
+                                                         autocomplete="off" min="1" max="5" value="1">
+                                    </h6></li>
+                            </ul>
 
 
-                                <button type="submit" class="btn btn-dark">Añadir al
-                                    carrito</button>
+                            <button type="submit" class="btn btn-dark">Añadir al
+                                carrito</button>
 
-                            </form>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>
